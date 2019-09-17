@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 import './global.css'
 
-import BadgeNew from './pages/BadgeNew';
+import Badges from './pages/Badges';
 
 const container = document.getElementById('root');
 
-ReactDOM.render(<BadgeNew />, container);
+ReactDOM.render(<Badges />, container);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
