@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 
 
 class BadgesList extends React.Component{
@@ -17,7 +19,7 @@ class BadgesList extends React.Component{
                                     <div className="col-7">
                                         <p className="h4 mt-2">{badge.firstName} {badge.lastName}</p>
                                         <p className="my-0">{badge.jobTitle}</p>
-                                        <p>@{badge.twitter}</p>
+                                        <FontAwesomeIcon  className="text-primary" icon={faTwitter} /><span className="text-primary"> @{badge.twitter}</span>
                                     </div>
                                     </div>
                                 </div>
