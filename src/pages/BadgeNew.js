@@ -4,6 +4,7 @@ import './styles/BadgeNew.css';
 import header from '../images/badge-header.svg';
 import Badge from '../components/Badge';
 import BadgeForm from '../components/BadgeForm';
+import api from '../api';
 
 class BadgeNew extends React.Component {
   state = {
@@ -24,6 +25,18 @@ class BadgeNew extends React.Component {
       },
     });
   };
+
+  handleSubmit = async e =>{
+    e.preventDefault();
+    this.setState({ loading: true, error: null});
+
+    try {
+      await api.badges.create(this.state.form);
+      this.setState({ loading: false })
+    } catch (error) {
+      this.setState({ loading: false, error: error});
+    }
+  }
 
   render() {
     return (
@@ -48,6 +61,7 @@ class BadgeNew extends React.Component {
             <div className="col-6">
               <BadgeForm
                 onChange={this.handleChange}
+                onSubmmt={this.handleSubmit}
                 formValues={this.state.form}
               />
             </div>
