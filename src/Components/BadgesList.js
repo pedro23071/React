@@ -6,9 +6,9 @@ import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 class BadgesList extends React.Component{
     render(){
         return(
-            <div>    
+            <React.Fragment>    
                 <ul className="list-unstyled">
-                    {this.props.badges.map((badge) =>{
+                    {this.props.badges.map(badge => { 
                         return(
                             <li key={badge.id} className="card mb-4">
                                 <div className="shadow-lg bg-white rounded">
@@ -27,7 +27,7 @@ class BadgesList extends React.Component{
                         );
                     })}
                 </ul>  
-            </div>
+            </React.Fragment>
         
         );
     }
