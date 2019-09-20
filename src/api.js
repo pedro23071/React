@@ -32,7 +32,9 @@ const api = {
       return callApi(`/badges`, {
         method: 'POST',
         body: JSON.stringify(badge),
-      });
+        });
+        //throw new Error('500: Server Error')
+      
     },
     read(badgeId) {
       return callApi(`/badges/${badgeId}`);

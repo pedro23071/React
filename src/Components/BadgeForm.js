@@ -14,7 +14,9 @@ class BadgeForm extends React.Component {
   render() {
     return (
       <div>
-        <h1>New Attendant</h1>
+        {this.props.error && (
+            <h3 className="text-danger">{this.props.error.message}</h3>
+        )}
 
         <form onSubmit={this.props.onSubmmt}>
           <div className="form-group">
